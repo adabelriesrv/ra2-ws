@@ -24,14 +24,6 @@ services:
         define('WP_SITEURL', $$iaw_proto . '://' . $$iaw_host);
 
 
-
-       $$iaw_host = $$_SERVER['HTTP_X_FORWARDED_HOST'] ?? $$_SERVER['HTTP_HOST'];
-       $$iaw_proto = $$_SERVER['HTTP_X_FORWARDED_PROTO'] ?? 'http';
-       define('WP_HOME', $$iaw_proto . '://' . $$iaw_host);
-       define('WP_SITEURL', $$iaw_proto . '://' . $$iaw_host);
-
-
-
        
     volumes:
       - wp_data:/var/www/html
